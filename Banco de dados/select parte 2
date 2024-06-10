@@ -1,0 +1,54 @@
+use cadastro;
+
+select * from cursos
+where nome = 'PHP';
+
+select * from cursos
+where nome like 'P%';
+
+select * from cursos
+where nome like '%a';
+
+select * from cursos
+where ano like '%8';
+
+select * from cursos
+where nome like '%a%';
+
+select * from cursos
+where nome not like '%a%';
+
+select * from cursos
+where nome like 'PH%P%';
+
+select * from cursos
+where nome like 'PH%P_';
+
+select distinct carga from cursos;
+
+select distinct ano from cursos;
+
+select distinct nacionalidade from alunos
+order by nacionalidade;
+
+select count(nome) from cursos;
+
+select count(carga) from cursos where carga > 40;
+
+select max(totaulas) from cursos;
+
+select max(carga) from cursos;
+
+select max(totaulas) from cursos where ano = '2018';
+
+select min(carga) from cursos;
+
+select min(totaulas) from cursos where ano = '2018';
+
+select sum(totaulas) from cursos;
+
+select sum(totaulas) from cursos where ano = '2018';
+
+select avg(totaulas) from cursos;
+
+select avg(totaulas) from cursos where ano = '2018';
