@@ -1,0 +1,23 @@
+select nome from alunos 
+where sexo = 'F';
+
+select nome, nascimento from alunos
+where nascimento between '2000-01-01' and '2015-12-31';
+
+select nome from alunos
+where profissao = 'programador' and sexo= 'M';
+
+select  nome from alunos
+where nome like 'J%' and sexo = 'F' and nacionalidade = 'Brasil';
+
+select nome, nacionalidade from alunos
+where nome like '%silva%' and nacionalidade != 'Brasil' and peso < '100';
+
+select max(altura) from alunos;
+
+select avg(peso) from alunos;
+
+select min(peso) from alunos where nacionalidade != 'Brasil' and nascimento between '1990-01-01' and '2000-12-31';
+
+select count(nome) from alunos
+where sexo = 'F' and altura > '1.90';
