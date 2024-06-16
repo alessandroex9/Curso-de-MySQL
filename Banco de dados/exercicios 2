@@ -1,0 +1,19 @@
+select * from alunos;
+
+select profissao, count(*) from alunos
+group by profissao;
+
+select sexo, count(*) from alunos
+where nascimento > '2005-01-01'
+group by sexo;
+
+
+select nacionalidade, count(*) from alunos
+where nacionalidade != 'Brasil'
+group by nacionalidade
+having count(*) >= 3;
+
+select altura, count(*) from alunos
+where peso > '100'
+group by altura
+having altura > (select avg(altura) from alunos);
