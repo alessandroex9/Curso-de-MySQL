@@ -1,0 +1,21 @@
+describe alunos_assiste_curso;
+
+create table alunos_assiste_curso (
+id int not null auto_increment,
+data date,
+idaluno int,
+idcurso int,
+primary key (id),
+foreign key (idaluno) references alunos(id),
+foreign key (idcurso) references cursos(idcurso)
+) default charset = utf8mb4;
+
+insert into alunos_assiste_curso values
+(default, '2014-03-01', '1', '2');
+
+select a.id, a.nome, ass.idaluno, ass.idcurso, c.nome from alunos a
+join alunos_assiste_curso ass
+on a.id = ass.idaluno
+join cursos c
+on ass.idcurso = c.idcurso
+order by a.nome;
